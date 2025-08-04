@@ -14,9 +14,9 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ className 
   const [campaigns, setCampaigns] = useState(50)
   
   const calculatePrice = () => {
-    const basePrice = 29
-    const userPrice = Math.max(0, (users - 5) * 3)
-    const campaignPrice = Math.max(0, (campaigns - 25) * 0.5)
+    const basePrice = 2407
+    const userPrice = Math.max(0, (users - 5) * 249)
+    const campaignPrice = Math.max(0, (campaigns - 25) * 42)
     return Math.round(basePrice + userPrice + campaignPrice)
   }
 
@@ -31,7 +31,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ className 
         <CardHeader>
           <CardTitle className="text-center">Pricing Calculator</CardTitle>
           <div className="text-center">
-            <span className="text-3xl font-bold text-primary">${calculatePrice()}</span>
+            <span className="text-3xl font-bold text-primary">₹{calculatePrice()}</span>
             <span className="text-muted-foreground">/month</span>
           </div>
         </CardHeader>
@@ -70,18 +70,18 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ className 
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex justify-between">
                 <span>Base Plan</span>
-                <span>$29</span>
+                <span>₹2,407</span>
               </div>
               {users > 5 && (
                 <div className="flex justify-between">
                   <span>Extra Users ({users - 5})</span>
-                  <span>${(users - 5) * 3}</span>
+                  <span>₹{(users - 5) * 249}</span>
                 </div>
               )}
               {campaigns > 25 && (
                 <div className="flex justify-between">
                   <span>Extra Campaigns ({campaigns - 25})</span>
-                  <span>${Math.round((campaigns - 25) * 0.5)}</span>
+                  <span>₹{(campaigns - 25) * 42}</span>
                 </div>
               )}
             </div>

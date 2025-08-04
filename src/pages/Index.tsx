@@ -10,7 +10,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { FeatureShowcase } from "@/components/ui/feature-showcase"
 import { PricingCalculator } from "@/components/ui/pricing-calculator"
 import { ContactForm } from "@/components/ui/contact-form"
-import { DemoVideo } from "@/components/ui/demo-video"
+
 import { StatsCounter } from "@/components/ui/stats-counter"
 import { BlogPreview } from "@/components/ui/blog-preview"
 import { Input } from "@/components/ui/input"
@@ -162,8 +162,8 @@ const Index = () => {
   const pricingPlans = [
     {
       name: "Starter",
-      price: "$49",
-      originalPrice: "$99",
+      price: "₹49",
+      originalPrice: "₹99",
       description: "Perfect for small businesses and startups getting started with AI marketing",
       features: [
         "Up to 5 active campaigns",
@@ -178,8 +178,8 @@ const Index = () => {
     },
     {
       name: "Professional",
-      price: "$149", 
-      originalPrice: "$299",
+      price: "₹149", 
+      originalPrice: "₹299",
       description: "Ideal for growing marketing teams that need advanced AI capabilities",
       features: [
         "Unlimited campaigns",
@@ -438,7 +438,7 @@ const Index = () => {
                 </Button>
                 <Button variant="glass" size="xl">
                   <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
+                  Learn More
                 </Button>
               </motion.div>
 
@@ -486,43 +486,57 @@ const Index = () => {
               </motion.div>
             </motion.div>
 
-            {/* Hero Image with Demo Video */}
+            {/* Hero Image */}
             <motion.div 
               className="relative"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <DemoVideo 
-                thumbnail={heroImage}
-                title="ADmyBRAND AI Suite Demo"
-                className="w-full rounded-2xl shadow-elegant"
-              />
-              
-              {/* Floating UI Elements */}
-              <motion.div 
-                className="absolute -top-4 -right-4 p-4 glass rounded-xl border border-white/10"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium">Live Analytics</span>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-4 -left-4 p-3 glass rounded-xl border border-white/10"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-              >
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">+247% ROI</span>
-                </div>
-              </motion.div>
+              <div className="relative overflow-hidden rounded-2xl shadow-elegant">
+                <img
+                  src={heroImage}
+                  alt="ADmyBRAND AI Suite Dashboard"
+                  className="w-full h-auto object-cover"
+                />
+                {/* New Floating Icons */}
+                <motion.div
+                  className="absolute top-4 left-4 p-3 glass rounded-xl border border-white/10 flex items-center space-x-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: [10, 0, 10] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Brain className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">AI Insights</span>
+                </motion.div>
+                <motion.div
+                  className="absolute top-20 right-6 p-3 glass rounded-xl border border-white/10 flex items-center space-x-2"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: [-10, 0, -10] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <BarChart3 className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">Real-time Analytics</span>
+                </motion.div>
+                <motion.div
+                  className="absolute bottom-10 left-6 p-3 glass rounded-xl border border-white/10 flex items-center space-x-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: [10, 0, 10] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Shield className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">Enterprise Security</span>
+                </motion.div>
+                <motion.div
+                  className="absolute bottom-6 right-10 p-3 glass rounded-xl border border-white/10 flex items-center space-x-2"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: [-10, 0, -10] }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">Growth Metrics</span>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>

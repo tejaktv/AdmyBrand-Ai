@@ -1,6 +1,6 @@
 # ADmyBRAND AI Suite - AI-Powered Marketing Platform
 
-A cutting-edge React-based marketing platform that leverages artificial intelligence to transform how businesses create, optimize, and scale their marketing campaigns. Built with modern web technologies and designed for exceptional user experience.
+A cutting-edge React-based marketing platform that leverages artificial intelligence to transform how businesses create, optimize, and scale their marketing campaigns. Built with modern web technologies and designed for exceptional user experience. link: admybrand-ai1.netlify.app
 
 ## 🚀 Quick Start
 
